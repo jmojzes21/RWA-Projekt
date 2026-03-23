@@ -1,0 +1,28 @@
+div.ucitavanje {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 90vh;
+
+  .krug {
+    border: 20px solid var(--tema-naglasak3);
+    border-top: 20px solid var(--tema-naglasak1);
+
+    border-radius: 50%;
+
+    width: 200px;
+    height: 200px;
+
+    animation: animacijaUcitavanje 800ms linear infinite;
+
+    @keyframes animacijaUcitavanje {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

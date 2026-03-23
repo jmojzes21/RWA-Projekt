@@ -1,0 +1,17 @@
+.sezona {
+  margin-top: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  justify-content: left;
+
+  img {
+    max-width: 100px;
+  }
+
+  .info-sezone {
+    flex: 1;
+  }
+}

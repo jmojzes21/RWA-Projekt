@@ -1,0 +1,25 @@
+{
+  "name": "rwa-projekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "aplikacija/server.mjs",
+  "scripts": {
+    "start": "node aplikacija/server.mjs konfig/konfiguracija.txt",
+    "dev": "node aplikacija/server.mjs konfig/konfiguracija.txt dev"
+  },
+  "keywords": [],
+  "author": "Josip Mojzeš",
+  "license": "ISC",
+  "dependencies": {
+    "base32-encoding": "^1.0.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "dateformat": "^5.0.3",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^8.0.3",
+    "sqlite3": "^6.0.1",
+    "totp-generator": "^2.0.1"
+  }
+}

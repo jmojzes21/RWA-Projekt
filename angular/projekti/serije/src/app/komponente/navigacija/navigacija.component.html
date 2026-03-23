@@ -1,0 +1,18 @@
+<header>
+  <h1>Moje serije</h1>
+
+  <nav>
+    <a *ngFor="let n of stavkeNavigacije" [routerLink]="n.url">{{ n.tekst }}</a>
+  </nav>
+
+  <div class="flex-1"></div>
+
+  <div *ngIf="prijavljeniKorisnik == undefined">
+    <a routerLink="/prijava">Prijavi se</a>
+  </div>
+
+  <div *ngIf="prijavljeniKorisnik != undefined">
+    {{ prijavljeniKorisnik.korisnicko_ime }}
+    (<a class="odjava" (click)="odjaviSe()">Odjavi se</a>)
+  </div>
+</header>

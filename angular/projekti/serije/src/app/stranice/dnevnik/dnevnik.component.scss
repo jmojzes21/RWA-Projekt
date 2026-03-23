@@ -1,0 +1,20 @@
+.zapisi {
+  table {
+    width: 100%;
+  }
+
+  label + select {
+    margin-left: 5px;
+  }
+
+  .filtriranje {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
+    row-gap: 5px;
+
+    input {
+      margin-left: 5px;
+    }
+  }
+}

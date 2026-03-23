@@ -1,0 +1,28 @@
+<div class="margin-all-50">
+  <div>
+    <input [(ngModel)]="unosPretrazivanje" (input)="pretrazi()" type="text" placeholder="Pretražite serije" class="pretrazivanje" />
+  </div>
+
+  <div class="serije">
+    <app-serija
+      *ngFor="let serija of serije"
+      [id]="serija.tmdb_id"
+      [naslov]="serija.naziv"
+      [opis]="serija.opis"
+      [slikaUrl]="serija.slika"
+      (prikaziDetalje)="prikaziDetalje($event)"
+    ></app-serija>
+  </div>
+
+  <div *ngIf="ukupnoSerija == 0">
+    <h2 class="margin-top-20">Nema serija za prikaz</h2>
+  </div>
+
+  <div *ngIf="ukupnoSerija != 0">
+    <p class="margin-top-20">Pronađen broj serija: {{ ukupnoSerija }}</p>
+
+    <div class="margin-top-20">
+      <app-stranicenje [stranica]="stranica" [ukupnoStranica]="ukupnoStranica" (promjenaStranice)="dohvatiStranicu($event)"></app-stranicenje>
+    </div>
+  </div>
+</div>

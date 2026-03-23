@@ -1,0 +1,28 @@
+.serija {
+  max-width: 1200px;
+  margin: 20px 0;
+  padding: 10px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  justify-content: left;
+  transition-duration: 200ms;
+
+  &:hover {
+    background-color: var(--tema-naglasak2);
+  }
+
+  img {
+    max-width: 80px;
+  }
+
+  .info {
+    flex: 1;
+  }
+}
+
+.pokazivac {
+  cursor: pointer;
+}

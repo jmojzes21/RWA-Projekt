@@ -1,0 +1,19 @@
+<div class="prikaz-stranicenja">
+  <button class="ocrtani ikona" (click)="promijeniStranicu(1)">
+    <img alt="ikona za prvi stranicu" src="/assets/icon-angles-left.png" />
+  </button>
+
+  <button class="ocrtani ikona" (click)="promijeniStranicu(stranica - 1)">
+    <img alt="ikona za prethodnu stranicu" src="/assets/icon-angle-left.png" />
+  </button>
+
+  <button class="ocrtani" (click)="promijeniStranicu(stranica)">{{ stranica }}/{{ ukupnoStranica }}</button>
+
+  <button class="ocrtani ikona" (click)="promijeniStranicu(stranica + 1)">
+    <img alt="ikona za sljedeću stranicu" src="/assets/icon-angle-right.png" />
+  </button>
+
+  <button class="ocrtani ikona" (click)="promijeniStranicu(ukupnoStranica)">
+    <img alt="ikona za posljednju stranicu" src="/assets/icon-angles-right.png" />
+  </button>
+</div>

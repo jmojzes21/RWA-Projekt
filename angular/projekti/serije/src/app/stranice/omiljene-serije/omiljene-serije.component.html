@@ -1,0 +1,18 @@
+<div class="margin-all-50">
+  <h1>Omiljene serije</h1>
+
+  <div *ngIf="serije.length == 0" class="margin-top-20">
+    <p>Nemate niti jednu omiljenu seriju</p>
+  </div>
+
+  <div class="serije">
+    <app-serija
+      *ngFor="let serija of serije"
+      [id]="serija.tmdb_id"
+      [naslov]="serija.naziv"
+      [opis]="serija.opis"
+      [slikaUrl]="serija.slika"
+      (prikaziDetalje)="prikaziDetalje($event)"
+    ></app-serija>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div *ngIf="korisnici.length != 0" class="margin-all-50">
+  <h1>Korisnici</h1>
+
+  <table class="moja-tablica margin-top-20">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Korisničko ime</th>
+        <th>Email</th>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Spol</th>
+        <th>Datum rođenja</th>
+        <th>Najdraža životinja</th>
+        <th>Uloga</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let korisnik of korisnici">
+        <td>{{ korisnik.id_korisnika }}</td>
+        <td>{{ korisnik.korisnicko_ime }}</td>
+        <td>{{ korisnik.email }}</td>
+        <td>{{ korisnik.ime }}</td>
+        <td>{{ korisnik.prezime }}</td>
+        <td>{{ korisnik.spol | pipaSpolKorisnika }}</td>
+        <td>{{ korisnik.datum_rodenja | pipaMojDatum }}</td>
+        <td>{{ korisnik.najdraza_zivotinja }}</td>
+        <td>{{ korisnik.tip_korisnika }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="margin-top-20">
+    <button class="ocrtani" (click)="dohvatiKorisnike()">Osvježi</button>
+  </div>
+
+  <div class="margin-top-40">
+    <h2>Brisanje korisnika</h2>
+  </div>
+
+  <form (ngSubmit)="obrisiKorisnika()" class="margin-top-10">
+    <div>
+      <label>Korisničko ime</label>
+      <input name="brisi_korisnicko_ime" type="text" [(ngModel)]="brisi_korisnicko_ime" />
+    </div>
+
+    <div class="margin-top-20">
+      <button type="submit" class="ocrtani">Obriši korisnika</button>
+    </div>
+  </form>
+
+  <div class="margin-top-10">
+    <app-poruka [poruka]="poruka"></app-poruka>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="zapisi margin-all-50">
+  <h1>Dnevnik</h1>
+
+  <form (ngSubmit)="osvjeziZapise(1)">
+    <div class="margin-top-20">
+      <label>Sortiraj zapise</label>
+      <select name="sortiranje" [(ngModel)]="sortiranje">
+        <option value="d">Po datumu</option>
+        <option value="m">Po metodi</option>
+      </select>
+    </div>
+
+    <div class="margin-top-10">Filtiraj</div>
+
+    <div class="filtriranje">
+      <label>Od datuma</label>
+      <input name="datumOd" [(ngModel)]="datumOd" type="text" />
+
+      <label class="margin-left-30">Do datuma</label>
+      <input name="datumDo" [(ngModel)]="datumDo" type="text" />
+
+      <label>Od vremena</label>
+      <input name="vrijemeOd" [(ngModel)]="vrijemeOd" type="text" />
+
+      <label class="margin-left-30">Do vremena</label>
+      <input name="vrijemeDo" [(ngModel)]="vrijemeDo" type="text" />
+    </div>
+
+    <div class="margin-top-20">
+      <button type="submit" class="ocrtani">Osvježi</button>
+    </div>
+
+    <div class="margin-top-10">
+      <app-poruka [poruka]="poruka"></app-poruka>
+    </div>
+  </form>
+
+  <div *ngIf="ukupnoZapisa == 0">
+    <h2>
+      <h2 class="margin-top-20">Nema zapisa za prikaz</h2>
+    </h2>
+  </div>
+
+  <div *ngIf="ukupnoZapisa != 0">
+    <table class="moja-tablica margin-top-20">
+      <thead>
+        <tr>
+          <th>Datum</th>
+          <th>Vrijeme</th>
+          <th>Korisnik</th>
+          <th>Metoda</th>
+          <th>Traženi resurs</th>
+          <th>Tijelo</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let zapis of zapisi">
+          <td>{{ zapis.vrijeme | pipaMojDatum : 'datum' }}</td>
+          <td>{{ zapis.vrijeme | pipaMojDatum : 'vrijeme' }}</td>
+          <td>{{ zapis.korisnicko_ime }}</td>
+          <td>{{ zapis.vrsta_zahtjeva }}</td>
+          <td>{{ zapis.trazeni_resurs }}</td>
+          <td>{{ zapis.tijelo }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="margin-top-20">Pronađen broj zapisa: {{ ukupnoZapisa }}</p>
+
+    <div class="margin-top-20">
+      <app-stranicenje [stranica]="stranica" [ukupnoStranica]="ukupnoStranica" (promjenaStranice)="osvjeziZapise($event)"></app-stranicenje>
+    </div>
+  </div>
+</div>

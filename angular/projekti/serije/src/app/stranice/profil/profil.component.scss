@@ -1,0 +1,10 @@
+form {
+  label {
+    display: block;
+  }
+
+  input[type='radio'] + label {
+    display: inline;
+    margin-left: 5px;
+  }
+}

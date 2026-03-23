@@ -1,0 +1,23 @@
+.serija {
+  padding: 0 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+
+  justify-content: left;
+
+  img {
+    max-width: 300px;
+  }
+
+  .opce-info {
+    flex: 1;
+    max-width: 800px;
+  }
+}
+
+.sezone {
+  margin-top: 80px;
+  margin-left: 50px;
+  max-width: 800px;
+}

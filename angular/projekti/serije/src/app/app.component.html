@@ -1,0 +1,25 @@
+<!--
+<app-navigacija></app-navigacija>
+
+<div *ngIf="provjeravanjeSesije">
+  <div class="ucitavanje">
+    <div class="krug"></div>
+  </div>
+</div>
+
+<div *ngIf="!provjeravanjeSesije">
+  <router-outlet></router-outlet>
+</div>
+
+-->
+
+<div *ngIf="!provjeravanjeSesije">
+  <app-navigacija></app-navigacija>
+  <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="provjeravanjeSesije">
+  <div class="ucitavanje">
+    <div class="krug"></div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+<div *ngIf="korisnik != undefined" class="margin-all-50">
+  <h1>Moj profil</h1>
+
+  <form (ngSubmit)="pohraniPromjene()" class="margin-top-20">
+    <div>
+      <label>Korisničko ime</label>
+      <input name="korisnicko_ime" type="text" [(ngModel)]="korisnicko_ime" disabled />
+    </div>
+
+    <div class="margin-top-10">
+      <label>Email</label>
+      <input name="email" type="text" [(ngModel)]="email" disabled />
+    </div>
+
+    <div class="margin-top-10">
+      <label>Ime</label>
+      <input name="ime" type="text" [(ngModel)]="ime" />
+    </div>
+
+    <div class="margin-top-10">
+      <label>Prezime</label>
+      <input name="prezime" type="text" [(ngModel)]="prezime" />
+    </div>
+
+    <div class="margin-top-10">
+      <label>Spol</label>
+
+      <div>
+        <input name="spol" type="radio" [(ngModel)]="spol" value="M" />
+        <label>Muško</label>
+      </div>
+
+      <div>
+        <input name="spol" type="radio" [(ngModel)]="spol" value="Z" />
+        <label>Žensko</label>
+      </div>
+    </div>
+
+    <div class="margin-top-10">
+      <label>Datum rođenja</label>
+      <input name="datum_rodenja" type="text" [(ngModel)]="datum_rodenja" />
+    </div>
+
+    <div class="margin-top-10">
+      <label>Najdraža životinja</label>
+      <input name="najdraza_zivotinja" type="text" [(ngModel)]="najdraza_zivotinja" />
+    </div>
+
+    <div *ngIf="korisnik.totp_ukljuceno == false" class="margin-top-20">
+      <p>Dvorazinska autentifikacija je ISKLJUČENA</p>
+      <button type="button" (click)="ukljuciDvorazinskuAutentifikaciju()" class="ocrtani margin-top-10">Uključi dvorazinsku autentifikaciju</button>
+    </div>
+
+    <div *ngIf="korisnik.totp_ukljuceno == true" class="margin-top-20">
+      <p>Dvorazinska autentifikacija je UKLJUČENA</p>
+      <button type="button" (click)="iskljuciDvorazinskuAutentifikaciju()" class="ocrtani margin-top-10">Isključi dvorazinsku autentifikaciju</button>
+    </div>
+
+    <div class="margin-top-20">
+      <button type="submit" class="puni">Pohrani promjene</button>
+    </div>
+
+    <div class="margin-top-10">
+      <app-poruka [poruka]="poruka"></app-poruka>
+    </div>
+
+    <div *ngIf="totp_podaci != undefined" class="margin-top-20">
+      <p><strong>OBAVEZNO SPREMITE TOTP TAJNI KLJUČ</strong></p>
+
+      <p><strong>TOTP tajni ključ: </strong>{{ totp_podaci.kljuc }}</p>
+      <p><strong>Algoritam: </strong>{{ totp_podaci.algoritam }}</p>
+      <p><strong>Broj znamenki: </strong>{{ totp_podaci.znamenke }}</p>
+      <p><strong>Period: </strong>{{ totp_podaci.period }} sekundi</p>
+    </div>
+
+    <div class="margin-top-20">
+      <app-qr-kod [sadrzaj]="qrSadrzaj"></app-qr-kod>
+    </div>
+  </form>
+</div>

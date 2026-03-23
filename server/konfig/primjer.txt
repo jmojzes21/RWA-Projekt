@@ -1,0 +1,13 @@
+jwtValjanost:3600
+jwtTajniKljuc:
+tajniKljucSesija:
+appStranicenje:10
+
+tmdbApiKeyV3:
+tmdbApiKeyV4:
+
+tajniKljucCaptcha:
+javniKljucCaptcha:
+
+githubTajniKljuc:
+githubClientID:

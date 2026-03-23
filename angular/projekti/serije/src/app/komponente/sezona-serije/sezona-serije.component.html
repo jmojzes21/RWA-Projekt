@@ -1,0 +1,12 @@
+<div *ngIf="sezona != undefined" class="sezona">
+  <div>
+    <img alt="slika sezone serije" [src]="sezona.slika | pipaTmdbSlika" />
+  </div>
+
+  <div class="info-sezone">
+    <h3>{{ sezona.naziv }}</h3>
+    <p>Broj sezone: {{ sezona.broj_sezone }}</p>
+    <p>Broj epizoda: {{ sezona.broj_epizoda }}</p>
+    <p>{{ sezona.opis }}</p>
+  </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="margin-all-50">
+  <h1>Prijava</h1>
+
+  <div *ngIf="pogled == 'prijava'">
+    <form (ngSubmit)="prijaviSe()" class="margin-top-20">
+      <div>
+        <label>Korisničko ime</label>
+        <input name="korisnicko_ime" type="text" [(ngModel)]="korisnicko_ime" />
+      </div>
+
+      <div class="margin-top-10">
+        <label>Lozinka</label>
+        <input name="lozinka" type="password" [(ngModel)]="lozinka" />
+      </div>
+
+      <div class="margin-top-20">
+        <button type="button" (click)="githubPrijava()" class="ocrtani">GitHub prijava</button>
+      </div>
+
+      <div class="margin-top-20">
+        <button type="submit" class="puni">Prijavi se</button>
+      </div>
+
+      <div class="margin-top-10">
+        <app-poruka [poruka]="poruka"></app-poruka>
+      </div>
+    </form>
+
+    <div class="margin-top-20">
+      <h2>Podaci za prijavu</h2>
+      <table class="moja-tablica margin-top-10">
+        <thead>
+          <tr>
+            <th>Korisničko ime</th>
+            <th>Lozinka</th>
+            <th>Uloga</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>admin</td>
+            <td>rwa</td>
+            <td>admin</td>
+          </tr>
+          <tr>
+            <td>obican</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+
+          <tr>
+            <td>anja</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>bruno</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>nikola</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>marko</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>mirko</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>tea</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>monika</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+          <tr>
+            <td>petar</td>
+            <td>rwa</td>
+            <td>obican</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="pogled == 'totp'">
+    <form (ngSubmit)="prijaviSeTotp()" class="margin-top-20">
+      <p>Za dovršetak prijave, unesite TOTP kod</p>
+
+      <div class="margin-top-10">
+        <label>TOTP kod</label>
+        <input name="totp_kod" type="text" [(ngModel)]="totp_kod" />
+      </div>
+
+      <div class="margin-top-20">
+        <button type="submit" class="puni">Prijavi se</button>
+        <button type="button" (click)="odustaniTotpPrijava()" class="ocrtani margin-left-20">Odustani</button>
+      </div>
+
+      <div class="margin-top-10">
+        <app-poruka [poruka]="poruka"></app-poruka>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div *ngIf="serija != undefined">
+  <div class="serija margin-top-60">
+    <div>
+      <img alt="slika serija" [src]="serija.slika | pipaTmdbSlika" />
+    </div>
+
+    <div class="opce-info">
+      <h1>{{ serija.naziv }}</h1>
+
+      <div class="margin-top-10">
+        <h2>Opis serije</h2>
+        <p *ngIf="serija.opis == ''">Serija nema opisa</p>
+        <p *ngIf="serija.opis != ''">{{ serija.opis }}</p>
+      </div>
+
+      <div class="margin-top-10">
+        <h2>Broj epizoda</h2>
+        <span>{{ serija.broj_epizoda }} epizoda</span>
+      </div>
+
+      <div class="margin-top-10">
+        <h2>Broj sezona</h2>
+        <span>{{ serija.broj_sezona }} sezona</span>
+      </div>
+
+      <div class="margin-top-10">
+        <h2>Popularnost</h2>
+        <span>{{ serija.popularnost }}</span>
+      </div>
+
+      <div class="margin-top-10">
+        <h2>Stranica serije</h2>
+        <span *ngIf="serija.homepage == ''">Serija nema vlastitu stranicu</span>
+        <a *ngIf="serija.homepage != ''" [href]="serija.homepage" target="_blank">{{ serija.homepage }}</a>
+      </div>
+
+      <div *ngIf="omiljena == false" class="margin-top-20">
+        <button class="ocrtani" (click)="spremiUOmiljene()">Spremi u omiljene</button>
+      </div>
+
+      <div *ngIf="omiljena == true" class="margin-top-20">
+        <button class="ocrtani" (click)="ukloniIzOmiljenih()">Ukloni iz omiljenih</button>
+      </div>
+
+      <div class="margin-top-10">
+        <app-poruka [poruka]="poruka"></app-poruka>
+      </div>
+    </div>
+  </div>
+
+  <div class="sezone">
+    <app-sezona-serije *ngFor="let sezona of serija.sezone" [sezona]="sezona"></app-sezona-serije>
+  </div>
+</div>

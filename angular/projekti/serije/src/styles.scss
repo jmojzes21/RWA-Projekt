@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --tema-naglasak1: #f59031;
+  --tema-naglasak2: #ffc38a;
+  --tema-naglasak3: #f0dece;
+
+  --tema-dugme: #1ab4db;
+  --tema-dugme2: #148caa;
+
+  --tema-pozadina: white;
+}
+
+button.puni {
+  background-color: var(--tema-dugme);
+  color: black;
+
+  border: none;
+  cursor: pointer;
+  padding: 6px 16px;
+  height: 40px;
+
+  font-size: 16px;
+  border-radius: 8px;
+
+  transition-duration: 200ms;
+
+  &:hover {
+    background-color: var(--tema-dugme2);
+  }
+}
+
+button.ocrtani {
+  background-color: var(--tema-pozadina);
+  border: 2px solid var(--tema-dugme2);
+  cursor: pointer;
+
+  padding: 4px 14px;
+  height: 40px;
+
+  font-size: 16px;
+  border-radius: 8px;
+
+  transition-duration: 200ms;
+
+  &:hover {
+    background-color: var(--tema-dugme2);
+  }
+}
+
+button.ikona {
+  padding: 2px 0;
+  width: 40px;
+  height: 40px;
+
+  img {
+    margin: 0;
+    padding: 0;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+table.moja-tablica {
+  border-collapse: collapse;
+
+  thead {
+    tr {
+      background-color: var(--tema-naglasak1);
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(even) {
+        background-color: var(--tema-naglasak3);
+      }
+    }
+  }
+
+  td,
+  th {
+    border: 1px solid black;
+    padding: 4px 8px;
+  }
+}
+
+$margin-vrijednosti: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100;
+
+@each $vr in $margin-vrijednosti {
+  .margin-all-#{$vr} {
+    margin: #{$vr}px;
+  }
+
+  .margin-left-#{$vr} {
+    margin-left: #{$vr}px;
+  }
+
+  .margin-top-#{$vr} {
+    margin-top: #{$vr}px;
+  }
+}
