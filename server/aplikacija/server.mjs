@@ -89,10 +89,6 @@ async function pokreniServer() {
   pripremiRestPutanje();
   pripremiAngularPutanje();
 
-  server.use((zahtjev, odgovor) => {
-    upravitelj.nemaResursa404(odgovor);
-  });
-
   server.listen(port, () => {
     console.log(`Server pokrenut na portu: ${port}`);
   });
@@ -180,5 +176,5 @@ function pripremiAngularPutanje() {
   const angular_app = path.join(pocetnaPutanja, '..', 'angular');
 
   server.use('/', express.static(angular_app));
-  //server.get('*', (zahtjev, odgovor) => odgovor.sendFile(path.join(angular_app, 'index.html')));
+  server.use((zahtjev, odgovor) => odgovor.sendFile(path.join(angular_app, 'index.html')));
 }

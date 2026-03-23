@@ -110,7 +110,7 @@ class AutentifikacijaUpravitelj {
 
     let totp_tajni_kljuc = korisnik.totp_tajni_kljuc;
     let totp_kod = upravitelj.parsiraj(podaci.kod);
-    let totp_trazeni_kod = Totp.generirajKod(totp_tajni_kljuc);
+    let totp_trazeni_kod = await Totp.generirajKod(totp_tajni_kljuc);
 
     if (totp_kod != totp_trazeni_kod) {
       upravitelj.greska400(odgovor, 'netočan TOTP kod');

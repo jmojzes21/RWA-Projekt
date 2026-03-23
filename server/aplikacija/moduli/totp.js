@@ -23,14 +23,14 @@ class Totp {
     return tajniKljuc.toUpperCase();
   };
 
-  static generirajKod = (tajniKljuc) => {
-    let kod = totp(tajniKljuc, {
+  static generirajKod = async (tajniKljuc) => {
+    let kod = await totp.TOTP.generate(tajniKljuc, {
       digits: Totp.znamenke,
       algorithm: Totp.algoritam,
       period: Totp.period,
     });
 
-    return kod;
+    return kod.otp;
   };
 }
 

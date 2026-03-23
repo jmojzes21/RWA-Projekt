@@ -5,7 +5,7 @@
   "main": "aplikacija/server.mjs",
   "scripts": {
     "start": "node aplikacija/server.mjs konfig/konfiguracija.txt",
-    "dev": "node aplikacija/server.mjs konfig/konfiguracija.txt dev"
+    "dev": "node --watch-path=./ aplikacija/server.mjs konfig/konfiguracija.txt dev"
   },
   "keywords": [],
   "author": "Josip Mojzeš",
