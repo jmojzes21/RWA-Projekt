@@ -1,70 +1,62 @@
 
-# Projekt iz kolegija Razvoj web aplikacija
+# Project from Development of Web Application course
 
-Ovaj repozitorij obuhvaća projekt na kolegiju Razvoj web aplikacija 
-(prijediplomski studij Razvoj programskih sustava).
-Cilj projekta je bio razviti backend i frontend dio web aplikacije za pregled
-serija.
+I developed a web application about series called "Moje serije".
+The project requirement was that everything must be in the native language.
 
-## Tehnologije
-* Node.js, Express.js
-* Angular, TypeScript
+<p>
+Moje serije is a web application for viewing series created in the Development of Web
+Application course. The goal of this project was to develop both a backend and a frontend part
+of a web application.
+</p>
 
-## Pokretanje
+<p>Features:</p>
+<ul>
+  <li>
+    Usage of an external service (<a href="https://developer.themoviedb.org/docs/getting-started" target="_blank">TMDB API</a>)
+  </li>
+  <li>Usage of pagination to limit the showing a huge amount of data</li>
+  <li>Integrating ReCAPTCHA on forms to prevent bots</li>
+  <li>Two-factor authentication</li>
+  <li>User authorization, different content for guests, basic and admin users</li>
+  <li>OAuth login using GitHub</li>
+</ul>
 
-Postoje 2 načina pokretanja web aplikacije.
+## Technology stack
+<ul>
+  <li><b>Frontend:</b> Angular, TypeScript</li>
+  <li><b>Backend:</b> Node.js, Express.js, JavaScript</li>
+  <li><b>Database:</b> SQLite</li>
+</ul>
 
-### Development
+## Run project
 
-U ovom načinu potrebno je pokrenuti Angular web aplikaciju i backend. Pokrenite backend tako da se prebacite u server mapu `cd server` i 
-izvršite naredbu `npm run dev`. 
+There are multiple ways to run the project.
 
-Pokrenite Angular tako da se
-prebacite u angular mapu `cd angular` i izvršite naredbu `npm run start`.
+### Development mode
 
-### Production
+In this mode, both the Angular app and the backend must be running.
+* Start backend
+* Run commands: `cd server`, `npm run dev`
+* Start Angular app
+* Run commands `cd angular`, `npm run start`
 
-Stvorite produkcijsku verziju Angular web aplikacije `npm run build` te kopirajte sadržaj mape `angular/dist/serije/browser`
-u mapu `server/angular`. Pokrenite backend sa naredbom `npm run start`.
+### Production mode
 
-## Slike web aplikacije
+In this mode, only backend is running.
 
-### Prijava - dvorazinska autentifikacija
+* Build Angular app
+* Run commands: `cd angular`, `npm run build`
+* Copy content of `angular/dist/serije/browser` to `server/angular`
+* Run backend: `cd server`, `npm run start`
 
-* Korisnici mogu uključiti i isključiti dvorazinsku autentifikaciju
-
-![alt](razno/prijava_totp.png)
-
-### Početna stranica
-
-* Pretraživanje serija te korištenje [TMDB API-a](https://developer.themoviedb.org/docs/getting-started)
-
-![alt](razno/pocetna.png)
-
-### Omiljene serije
-
-* Prikaz omiljenih serija za korisnika
-
-![alt](razno/omiljene.png)
-
-### Korisnici
-
-* Prikaz svih korisnika
-* Ograničeno samo za administratora
-
-![alt](razno/korisnici.png)
-
-### Dnevnik - straničenje
-
-* Prikaz dnevnika
-* Ograničeno samo za administratora
-* Straničenje velike količine podataka
-
-![alt](razno/dnevnik.png)
-
-## Struktura repozitorija
+## Repository structure
 
 | Mapa | Opis |
 |-|-|
-| angular | Frontend dio, odnosno Angular web aplikacija. |
-| server | Backend dio koji pruža web servise. |
+| angular | Frontned: Angular web application |
+| server | Backend: Node.js, Express.js |
+
+## Project gallery
+* [Link to project gallery](https://jmojzes21.github.io/portfolio_page/projects/moje-serije#gallery)
+
