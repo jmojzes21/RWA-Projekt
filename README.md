@@ -52,7 +52,7 @@ In this mode, only backend is running.
 
 ## Repository structure
 
-| Mapa | Opis |
+| Directory | Description |
 |-|-|
 | angular | Frontned: Angular web application |
 | server | Backend: Node.js, Express.js |
