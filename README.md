@@ -58,5 +58,5 @@ In this mode, only backend is running.
 | server | Backend: Node.js, Express.js |
 
 ## Project gallery
-* [Link to project gallery](https://jmojzes21.github.io/portfolio_page/projects/moje-serije#gallery)
+* [Link to project gallery](https://jmojzes21.github.io/portfolio_page/#/projects/moje-serije#gallery)
 
