@@ -6,7 +6,7 @@
   --tema-naglasak2: #ffc38a;
   --tema-naglasak3: #f0dece;
 
-  --tema-dugme: #1ab4db;
+  --tema-dugme: #00c2f3;
   --tema-dugme2: #148caa;
 
   --tema-pozadina: white;
@@ -18,8 +18,7 @@ button.puni {
 
   border: none;
   cursor: pointer;
-  padding: 6px 16px;
-  height: 40px;
+  padding: 8px 16px;
 
   font-size: 16px;
   border-radius: 8px;
@@ -33,11 +32,10 @@ button.puni {
 
 button.ocrtani {
   background-color: var(--tema-pozadina);
-  border: 2px solid var(--tema-dugme2);
+  border: 2px solid var(--tema-dugme);
   cursor: pointer;
 
-  padding: 4px 14px;
-  height: 40px;
+  padding: 8px 14px;
 
   font-size: 16px;
   border-radius: 8px;
@@ -45,6 +43,7 @@ button.ocrtani {
   transition-duration: 200ms;
 
   &:hover {
+    border-color: var(--tema-dugme2);
     background-color: var(--tema-dugme2);
   }
 }

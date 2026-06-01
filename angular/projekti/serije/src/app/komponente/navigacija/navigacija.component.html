@@ -1,4 +1,5 @@
 <header>
+  <img class="logo" src="/assets/serije_icon.png" />
   <h1>Moje serije</h1>
 
   <nav>
@@ -8,11 +9,11 @@
   <div class="flex-1"></div>
 
   <div *ngIf="prijavljeniKorisnik == undefined">
-    <a routerLink="/prijava">Prijavi se</a>
+    <a class="prijava" routerLink="/prijava">Prijavi se</a>
   </div>
 
   <div *ngIf="prijavljeniKorisnik != undefined">
     {{ prijavljeniKorisnik.korisnicko_ime }}
-    (<a class="odjava" (click)="odjaviSe()">Odjavi se</a>)
+    <a class="margin-left-10 odjava" (click)="odjaviSe()">Odjavi se</a>
   </div>
 </header>

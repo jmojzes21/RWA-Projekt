@@ -8,9 +8,18 @@ header {
   justify-content: start;
   padding: 0 20px;
 
+  img.logo {
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 5px 1px black;
+  }
+
   h1 {
     font-size: 24px;
     margin-right: 20px;
+    font-weight: 500;
   }
 
   nav {
@@ -30,10 +39,17 @@ header {
   }
 
   a {
+    &.prijava,
     &.odjava {
-      color: -webkit-link;
+      padding: 2px 10px;
+      border-radius: 10px;
+      background-color: var(--tema-naglasak2);
+      color: black;
+      text-decoration: none;
+    }
+
+    &.odjava {
       cursor: pointer;
-      text-decoration: underline;
     }
   }
 }
