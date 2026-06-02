@@ -10,7 +10,7 @@ Application course. The goal of this project was to develop both a backend and a
 of a web application.
 </p>
 
-<p>Features:</p>
+### Features
 <ul>
   <li>
     Usage of an external service (<a href="https://developer.themoviedb.org/docs/getting-started" target="_blank">TMDB API</a>)
